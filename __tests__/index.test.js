@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const mongoURI = "mongodb://mongoService:27017/" + "softHardTesting";
 
-before(done, () => {
+before((done) => {
   mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -16,8 +16,8 @@ before(done, () => {
     })
     .on("connectionError", (err) => {
       console.log(err);
+      done();
     });
-  done();
 });
 
 describe("Test-1", () => {
