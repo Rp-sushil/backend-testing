@@ -35,6 +35,5 @@ jobs:
         with:
           node-version: "12"
       - run: sleep 15
-      - run: mongo --host mongodb --eval "db.version()"
       - run: npm install
       - run: npm test
