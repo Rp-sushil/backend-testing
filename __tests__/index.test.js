@@ -17,6 +17,7 @@ before(done, () => {
     .on("connectionError", (err) => {
       console.log(err);
     });
+  done();
 });
 
 describe("Test-1", () => {
