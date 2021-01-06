@@ -1,14 +1,21 @@
 const expect = require("chai").expect;
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb://mongoService:27017/" + "softHardTesting";
+const mongoURI = "mongodb://localhost:27017/" + "softHardTesting";
 
 before((done) => {
-  mongoose.connect(mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-  });
+  mongoose.connect(
+    mongoURI,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+    },
+    (err) => {
+      if (err) console.log(err);
+      done();
+    }
+  );
   mongoose.connection
     .once("open", () => {
       console.log("connected to database");
