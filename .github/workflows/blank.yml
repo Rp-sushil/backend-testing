@@ -25,15 +25,12 @@ jobs:
       image: node:10.16-jessie
     # Steps represent a sequence of tasks that will be executed as part of the job
     services:
-      mongodb:
-        image: mongo
-        ports:
-          - 27017:27017
+      cypress:
+        image: cypress/included
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
-      - run: sleep 15
       - run: npm install
       - run: npm test
