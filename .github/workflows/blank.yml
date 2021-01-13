@@ -22,8 +22,7 @@ jobs:
     # runs all of the steps inside the specified container rather than on the VM host.
     # Because of this the network configuration changes from host based network to a container network.
     container:
-      image: node:10.16-jessie
-      image: newtonschool/cypress-test     
+      image: newtonschool/cypress-test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
