@@ -16,7 +16,5 @@
     "url": "https://github.com/Rp-sushil/backend-testing/issues"
   },
   "homepage": "https://github.com/Rp-sushil/backend-testing#readme",
-  "dependencies": {
-    "cypress": "5.4.0"
-  }
+  "dependencies": {}
 }
