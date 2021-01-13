@@ -15,7 +15,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
-      - name: cypress
+      - run:
+        name: cypress
         image: newtonschool/cypress-test
       - run: npm install
       - run: npm test
