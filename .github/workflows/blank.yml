@@ -10,13 +10,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    services:
-      cypress:
-        image: newtonschool/cypress-test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "12"
+      - uses:
+        image: newtonschool/cypress-test
       - run: npm install
       - run: npm test
